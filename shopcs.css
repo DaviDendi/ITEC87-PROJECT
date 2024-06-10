@@ -1,0 +1,95 @@
+h2 
+{
+text-align = center;
+}
+h2{
+	font-size: 50px;
+}
+header 
+{
+      background-color: #d7d7d7;
+      color: #000000;
+      text-align: center;
+      padding: 1em;
+}
+.buttons 
+{
+    font-size: 18px; 
+    padding: 10px 20px; 
+}
+.category-buttons button
+{
+  width: 150px;
+  height: 35px; 
+  font-size: 18px; 
+  padding: 10px 20px; 
+  margin-top: 5px;
+
+}
+
+{
+  width: 150px;
+  height: 35px; 
+  font-size: 18px; 
+  padding: 10px 20px; 
+  margin-top: 5px;
+
+}
+.item img {
+    width: 100px; 
+    height: auto; 
+	display: block;
+    margin: 0 auto;
+}
+.item 
+{
+      border: 5px solid #000000;
+      border-radius: 5px;
+      padding: 10px;
+      margin: 20px;
+      width: 200px;
+	  display: inline-block;
+	  text-align: center;
+}
+nav {
+      text-align: center;
+      margin: 20px 0;
+    }
+
+nav a 
+{
+      display: inline-block;
+      padding: 10px 20px;
+      text-decoration: revert;
+      background-color: white;
+      border-radius: 5px;
+      margin: 10px;
+      transition: background-color 0.3s;
+	  border: 1px solid black;
+    }
+
+nav a:hover 
+{
+      background-color: #ADD8E6;
+}
+section 
+{
+      text-align: center;
+}
+
+.main_container 
+{
+    display: flex;
+    justify-content: center; 
+    flex-wrap: wrap; 
+}
+
+ hr 
+ {
+    position: relative;
+    top: 20px;
+    border: none;
+    height: 12px;
+    background: black;
+    margin-bottom: 50px;
+}

@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Restaurant Menu</title>
+  <!--css link-->
+  <link rel="stylesheet" href="Pasion.css">
+  <script src="pasion.js"></script>
+</head>
+
+<body>
+	<h1>RESTAURANT</h1>
+	<button onclick="window.location.href='FrontPage.html'" style="margin-top:-50px; position: absolute; left: 10;">Back</button>
+</div>
+	<hr>
+	<!--buttons-->
+	<center><div class="category-buttons">
+    <button onclick="filterCategory('all')">All</button>
+	<button onclick="filterCategory('main')">Main Dishes</button>
+    <button onclick="filterCategory('vege')">Vegetables</button>
+    <button onclick="filterCategory('dessert')">Desserts</button>
+	<button onclick="filterCategory('ads')">Ads on</button>
+  </div></center>
+  
+  <center>	<div class="discounts">
+    <label><input type="checkbox" id="seniorCheckbox">Senior (20% discount)</label>
+    <label><input type="checkbox" id="pwdCheckbox">PWD (30% discount)</label>
+    <label><input type="checkbox" id="studentCheckbox">Student (10% discount)</label>
+	</div></center>
+	<br>
+  
+  <!--dish total amount button -->
+ <div class="button-container">
+  <div class="calculate-button">
+    <button onclick="calculateTotal()">Dish Total</button>
+  </div>
+  <!--calculate amount of change-->
+  <div class="calculate-button">
+    <button onclick="calculateChange()">Calculate Change</button>
+	
+  </div>
+</div>
+
+ 
+<!-- textbox -->
+ <center> <div class="money-input">
+    <label for="moneyInput">Enter your money:</label>
+    <input type="number" id="moneyInput" onchange="calculateChange()" min="0" step="0.01">
+</div></center>
+
+	<!--dish total amount -->
+  <div class="total">
+    <p>Total Amount: ₱ <span id="totalPrice">0.00</span></p>
+  </div>
+  <!--Amount-My money -->
+  <div class="change">
+	 <p>Your Change: ₱ <span id="totalChange">0.00</span></p>
+	 </div>
+<!-- button   para sa resibo-->
+<div class="calculate-button">
+  <center><button onclick="generateReceipt()">Receipt</button></center>
+</div>
+
+  <div class="menu">
+	<!--Main dishes-->
+    <div class="item main" data-stock="100">
+    <img src="bulalo.jpg" alt="Bulalo">
+    <h3>BULALO</h3>
+    <p> ₱520.00</p>
+	<span>Stock: 100</span> 
+    <input type="checkbox" onchange="enableInput(this)">
+    <input type="number" value="0" onchange="calculateTotal()" disabled>
+</div>
+    <div class="item main" data-stock="100">
+	<img src="tawilis.jpg" alt="Tawilis">
+      <h3>CRISPY TAWILIS</h3>
+      <p>₱290.00</p>
+	  <span>Stock: 100</span> 
+      <input type="checkbox" onchange="enableInput(this)">
+    <input type="number" value="0" onchange="calculateTotal()" disabled>
+</div>
+	<div class="item main" data-stock="100">
+	<img src="hipon.jpg" alt="Hipon">
+      <h3>SINIGANG NA HIPON</h3>
+      <p>₱350.00</p>
+	  <span>Stock: 100</span> 
+      <input type="checkbox" onchange="enableInput(this)">
+    <input type="number" value="0" onchange="calculateTotal()" disabled>
+</div>
+	<div class="item main" data-stock="100">
+	<img src="sisig.jpg" alt="Sisig">
+      <h3>SIZZLING SISIG</h3>
+      <p>₱200.00</p>
+	  <span>Stock: 100</span> 
+      <input type="checkbox" onchange="enableInput(this)">
+    <input type="number" value="0" onchange="calculateTotal()" disabled>
+</div>
+	<div class="item main" data-stock="100">
+	<img src="pata.jpg" alt="Pata">
+      <h3>CRISPY PATA</h3>
+      <p>₱550.00</p>
+	  <span>Stock: 100</span> 
+      <input type="checkbox" onchange="enableInput(this)">
+    <input type="number" value="0" onchange="calculateTotal()" disabled>
+</div>	
+	<div class="item main" data-stock="100">
+	<img src="salmon.jpg" alt="Salmon">
+      <h3>SINIGANG SALMON</h3>
+      <p>₱728.00</p>
+	  <span>Stock: 100</span> 
+      <input type="checkbox" onchange="enableInput(this)">
+    <input type="number" value="0" onchange="calculateTotal()" disabled>
+</div>
+	<div class="item main" data-stock="100">
+	<img src="bicol.jpg" alt="Bicol">
+      <h3>BICOL EXPRESS</h3>
+      <p>₱400.00</p>
+	  <span>Stock: 100</span> 
+      <input type="checkbox" onchange="enableInput(this)">
+    <input type="number" value="0" onchange="calculateTotal()" disabled>
+</div>	
+	<!--vegetables-->
+	<div class="item vege" data-stock="100">
+	<img src="pakbet.jpg" alt="Pinakbet">
+      <h3>PINAKBET</h3>
+      <p>₱P420.00</p>
+	  <span>Stock: 100</span> 
+      <input type="checkbox" onchange="enableInput(this)">
+    <input type="number" value="0" onchange="calculateTotal()" disabled>
+</div>
+    <div class="item vege" data-stock="100">
+	<img src="monggo.jpg" alt="Monggo">
+      <h3>MONGGO</h3>
+	<p>₱190.00</p>
+	<span>Stock: 100</span> 
+      <input type="checkbox" onchange="enableInput(this)">
+    <input type="number" value="0" onchange="calculateTotal()" disabled>
+</div>
+	<div class="item vege" data-stock="100">
+	<img src="lumpia.jpg" alt="Lumpia">
+      <h3>LUMPIA</h3>
+	<p>₱160.50</p>
+	<span>Stock: 100</span> 
+      <input type="checkbox" onchange="enableInput(this)">
+    <input type="number" value="0" onchange="calculateTotal()" disabled>
+</div>
+	<div class="item vege" data-stock="100">
+	<img src="pansit.jpg" alt="Pansit">
+      <h3>PANSIT</h3>
+	<p>₱250.00</p>
+	<span>Stock: 100</span> 
+      <input type="checkbox" onchange="enableInput(this)">
+    <input type="number" value="0" onchange="calculateTotal()" disabled>
+</div>
+	<div class="item vege" data-stock="100">
+	<img src="laing.jpg" alt="Laing">
+      <h3>Laing</h3>
+	<p>₱150.00</p>
+	<span>Stock: 100</span> 
+      <input type="checkbox" onchange="enableInput(this)">
+    <input type="number" value="0" onchange="calculateTotal()" disabled>
+</div>
+	<div class="item vege" data-stock="100">
+	<img src="langka.jpg" alt="Langka">
+      <h3>GINAT'ANG LANGKA</h3>
+	<p>₱150.50</p>
+	<span>Stock: 100</span> 
+     <input type="checkbox" onchange="enableInput(this)">
+    <input type="number" value="0" onchange="calculateTotal()" disabled>
+</div>
+	<div class="item vege" data-stock="100">
+	<img src="chopsuey.jpg" alt="Chopsuey">
+      <h3>CHOP SUEY</h3>
+	<p>₱250.00</p>
+	<span>Stock: 100</span> 
+     <input type="checkbox" onchange="enableInput(this)">
+    <input type="number" value="0" onchange="calculateTotal()" disabled>
+</div>
+	
+    <div class="item drinks" data-stock="100">
+	<img src="coke.jpg" alt="Coke">
+      <h3>COKE</h3>
+      <p>₱70.00</p>
+	  <span>Stock: 100</span> 
+      <input type="checkbox" onchange="enableInput(this)">
+    <input type="number" value="0" onchange="calculateTotal()" disabled>
+</div>
+    <div class="item drinks" data-stock="100">
+	<img src="royal.jpg" alt="Royal">
+      <h3>ROYAL</h3>
+      <p>₱70.00</p>
+	  <span>Stock: 100</span> 
+      <input type="checkbox" onchange="enableInput(this)">
+    <input type="number" value="0" onchange="calculateTotal()" disabled>
+</div>
+	<div class="item drinks" data-stock="100">
+	<img src="lemonade.jpg" alt="lemonade">
+      <h3>LEMONADE</h3>
+      <p>₱50.50</p>
+	  <span>Stock: 100</span> 
+      <input type="checkbox" onchange="enableInput(this)">
+    <input type="number" value="0" onchange="calculateTotal()" disabled>
+</div>
+	<div class="item drinks" data-stock="100">
+	<img src="icetea.jpg" alt="Icetea">
+      <h3>ICED TEA</h3>
+      <p>₱40.00</p>
+	  <span>Stock: 100</span> 
+      <input type="checkbox" onchange="enableInput(this)">
+    <input type="number" value="0" onchange="calculateTotal()" disabled>
+</div>
+	<div class="item drinks" data-stock="100">
+	<img src="icecoffee.jpg" alt="icecoffee">
+      <h3>ICED COFFEE</h3>
+      <p>₱90.00</p>
+	  <span>Stock: 100</span> 
+      <input type="checkbox" onchange="enableInput(this)">
+    <input type="number" value="0" onchange="calculateTotal()" disabled>
+</div>
+	<div class="item drinks" data-stock="100">
+	<img src="mangojuice.jpg" alt="Sago">
+      <h3>MANGO JUICE</h3>
+      <p>₱150.00</p>
+	  <span>Stock: 100</span> 
+      <input type="checkbox" onchange="enableInput(this)">
+    <input type="number" value="0" onchange="calculateTotal()" disabled>
+</div>
+	<div class="item drinks" data-stock="100">
+	<img src="melonjuice.jpeg" alt="Melon">
+      <h3>MELON JUICE</h3>
+      <p>₱70.00</p>
+	  <span>Stock: 100</span> 
+      <input type="checkbox" onchange="enableInput(this)">
+    <input type="number" value="0" onchange="calculateTotal()" disabled>
+</div>
+	<!--desserts-->
+	<div class="item dessert" data-stock="100">
+	<img src="leche.jpg" alt="Leche">
+      <h3>LECHE FLAN</h3>
+      <p>₱270.00</p>
+	  <span>Stock: 100</span> 
+      <input type="checkbox" onchange="enableInput(this)">
+    <input type="number" value="0" onchange="calculateTotal()" disabled>
+</div>
+	<div class="item dessert" data-stock="100">
+	<img src="halohalo.webp" alt="Halohalo">
+      <h3>HALO-HALO</h3>
+      <p>₱100.00</p>
+	  <span>Stock: 100</span> 
+     <input type="checkbox" onchange="enableInput(this)">
+    <input type="number" value="0" onchange="calculateTotal()" disabled>
+</div>
+	<div class="item dessert" data-stock="100">
+	<img src="cassava.jpg" alt="Cassava">
+      <h3>CASSAVA FLAN</h3>
+      <p>₱250.00</p>
+	  <span>Stock: 100</span> 
+      <input type="checkbox" onchange="enableInput(this)">
+    <input type="number" value="0" onchange="calculateTotal()" disabled>
+</div>
+	<div class="item dessert" data-stock="100">
+	<img src="mangosago.jpeg" alt="Sago">
+      <h3>MANGO TAPIOCA </h3>
+      <p>₱10.00</p>
+	  <span>Stock: 100</span> 
+      <input type="checkbox" onchange="enableInput(this)">
+    <input type="number" value="0" onchange="calculateTotal()" disabled>
+</div>
+	<div class="item dessert" data-stock="100">
+	<img src="crinkles.jpg" alt="Crinkles">
+      <h3>CRINKLES</h3>
+      <p>₱50.99</p>
+	  <span>Stock: 100</span> 
+      <input type="checkbox" onchange="enableInput(this)">
+    <input type="number" value="0" onchange="calculateTotal()" disabled>
+</div>
+	<div class="item dessert" data-stock="100">
+	<img src="maja.jpg" alt="Maja">
+      <h3>MAJA BLANCA</h3>
+      <p>₱90.99</p>
+	  <span>Stock: 100</span> 
+      <input type="checkbox" onchange="enableInput(this)">
+    <input type="number" value="0" onchange="calculateTotal()" disabled>
+</div>
+	<div class="item dessert" data-stock="100">
+	<img src="pichi.jpg" alt="Pichi">
+      <h3>PICHI-PICHI</h3>
+      <p>₱20.99</p>
+	  <span>Stock: 100</span> 
+      <input type="checkbox" onchange="enableInput(this)">
+    <input type="number" value="0" onchange="calculateTotal()" disabled>
+</div>
+	<div class="item dessert" data-stock="100">
+	<img src="brownie.jpg" alt="Brownie">
+      <h3>BROWNIES</h3>
+      <p>₱25.99</p>
+	  <span>Stock: 100</span> 
+      <input type="checkbox" onchange="enableInput(this)">
+    <input type="number" value="0" onchange="calculateTotal()" disabled>
+</div>
+</div>
+</body>
+</html>

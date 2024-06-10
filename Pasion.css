@@ -1,0 +1,68 @@
+    body {
+      font-family: Arial, sans-serif;
+	  background-image: url('bg.png'); 
+    }
+	h1 {
+		text-align: center;
+	}
+	h3 {
+		text-align: center;
+	}
+	p {
+		text-align: center;
+	}
+	.item img {
+    width: 100px; 
+    height: auto; 
+	display: block;
+    margin: 0 auto;
+}
+    .menu {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .item {
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 10px;
+      margin: 20px;
+      width: 200px;
+    }
+
+    .category-buttons {
+      margin-bottom: 20px;
+    }
+
+    .total {
+      font-weight: bold;
+    }
+.category-buttons button {
+  width: 150px;
+  height: 40px; 
+  font-size: 16px; 
+  padding: 10px; 
+}
+.calculate-button button {
+	width: 200px;
+	height: 50px;
+	font-size: 16px;
+	padding: 10px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px; 
+}
+
+.calculate-button {
+  margin: 0 10px; 
+}
+
+.calculate-button button {
+  width: 200px;
+  height: 50px;
+  font-size: 16px;
+  padding: 10px;
+}

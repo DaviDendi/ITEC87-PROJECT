@@ -1,0 +1,35 @@
+.category-buttons button {
+  width: 150px;
+  height: 40px; 
+  font-size: 16px; 
+  padding: 10px; 
+}
+
+.img{
+ height: 100px;
+ width: 100px;
+ margin: 50;
+}
+
+header {
+    text-align: center;
+    padding: 20px 0;
+}
+
+#store-name {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('davidlogo.png'); 
+    background-size: 1550px 800px;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 90vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
